@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ArtikelFilmActivity"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/judul_artikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/judul_film"/>
+
+        <ImageView
+            android:id="@+id/sampul_artikel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@id/judul_artikel"
+            app:layout_constraintEnd_toEndOf="@id/judul_artikel"
+            app:layout_constraintTop_toBottomOf="@id/judul_artikel"
+            tools:src="@tools:sample/avatars"/>
+
+        <TextView
+            android:id="@+id/rilis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sampul_artikel"
+            android:textSize="16sp"
+            android:text="@string/rilis"/>
+
+        <TextView
+            android:id="@id/tahun_rilis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/rilis"
+            app:layout_constraintTop_toTopOf="@id/rilis"
+            android:textSize="16sp"
+            android:text="@string/tahun_rilis"/>
+
+        <TextView
+            android:id="@+id/sinopsis_film"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/rilis"
+            app:layout_constraintTop_toBottomOf="@id/rilis"
+            android:textSize="16sp"
+            android:text="@string/sinopsis_film"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
