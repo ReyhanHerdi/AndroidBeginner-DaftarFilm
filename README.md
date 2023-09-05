@@ -1,2 +1,2 @@
 # AndroidBeginner-DaftarFilm
-Projek Android pemula: Aplikasi Daftar Film
+Projek Android pemula: Aplikasi statis daftar film
