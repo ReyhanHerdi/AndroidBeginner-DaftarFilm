@@ -15,16 +15,16 @@
         android:theme="@style/Theme.DaftarFilm"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ArtikelFilmActivity"
             android:exported="false" />
         <activity
             android:name=".AboutMeActivity"
             android:exported="false" />
         <activity
-            android:name=".DaftarFIlmActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".IconSplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

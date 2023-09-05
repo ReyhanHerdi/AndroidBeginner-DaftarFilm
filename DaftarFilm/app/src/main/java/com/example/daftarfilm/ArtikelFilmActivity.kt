@@ -1,12 +1,16 @@
 package com.example.daftarfilm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 
-class ArtikelFilmActivity : AppCompatActivity() {
+class ArtikelFilmActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         const val JUDUL_FILM = "judul_film"
@@ -23,6 +27,7 @@ class ArtikelFilmActivity : AppCompatActivity() {
         val tahunRilis: TextView = findViewById(R.id.tahun_rilis)
         val sinopsisFilm: TextView = findViewById(R.id.sinopsis_film)
         val posterFilm: ImageView = findViewById(R.id.sampul_artikel)
+        val buttonShare: ImageButton = findViewById(R.id.action_share)
 
         val judul = intent.getStringExtra(JUDUL_FILM)
         val rilis = intent.getStringExtra(TAHUN_RILIS)
@@ -40,5 +45,21 @@ class ArtikelFilmActivity : AppCompatActivity() {
         Glide.with(this)
             .load(sampul)
             .into(posterFilm)
+
+        buttonShare.setOnClickListener(this)
+    }
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.action_share -> {
+                val sendIntent: Intent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, intent.getStringExtra(SINOPSIS_FILM))
+                    type = "text/plain"
+                }
+
+                val shareIntent = Intent.createChooser(sendIntent, null)
+                startActivity(shareIntent)
+            }
+        }
     }
 }

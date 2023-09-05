@@ -10,6 +10,7 @@
     <string name="email_saya">reyhanherdiyanto180603@gmail.com</string>
     <string name="tentang_saya">TENTANG SAYA</string>
     <string name="rilis">Tahun rilis:</string>
+    <string name="share_button">Share button</string>
 
     <string-array name="film_judul">
         <item>Hacksaw Ridge</item>

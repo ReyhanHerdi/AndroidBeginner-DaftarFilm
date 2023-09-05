@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             val film = Film(dataJudul[i], dataTahun[i], dataSinopsis[i], dataPoster[i])
             listFilm.add(film)
         }
-
         return listFilm
     }
 
@@ -62,17 +61,16 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClicked(data: Film) {
                 showClickedFilm(data)
             }
-
         })
     }
 
     private fun showClickedFilm(film: Film) {
         val toArtikelFilm = Intent(this@MainActivity, ArtikelFilmActivity::class.java)
-        toArtikelFilm.putExtra(ArtikelFilmActivity.JUDUL_FILM, film.judulFilm)
-        toArtikelFilm.putExtra(ArtikelFilmActivity.TAHUN_RILIS, film.tahunRilis)
-        toArtikelFilm.putExtra(ArtikelFilmActivity.SINOPSIS_FILM, film.sinopsisFilm)
-        toArtikelFilm.putExtra(ArtikelFilmActivity.POSTER_FILM, film.posterFilm)
+        toArtikelFilm
+            .putExtra(ArtikelFilmActivity.JUDUL_FILM, film.judulFilm)
+            .putExtra(ArtikelFilmActivity.TAHUN_RILIS, film.tahunRilis)
+            .putExtra(ArtikelFilmActivity.SINOPSIS_FILM, film.sinopsisFilm)
+            .putExtra(ArtikelFilmActivity.POSTER_FILM, film.posterFilm)
         startActivity(toArtikelFilm)
-        Toast.makeText(this, "Film ini " + film.judulFilm, Toast.LENGTH_SHORT).show()
     }
 }
